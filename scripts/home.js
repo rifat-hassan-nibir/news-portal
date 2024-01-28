@@ -36,7 +36,7 @@ const showNews = (allNews, categoryName) => {
           </div>
           <div class="w-full lg:w-4/5 flex flex-col justify-between py-7 space-y-7">
             <div class="space-y-4">
-              <h3 class="text-[28px] text-[#121221] font-bold">
+              <h3 class="text-2xl lg:text-[28px] text-[#121221] font-bold">
                 ${news.title}
               </h3>
               <p class="text-base text-[#949494]">
@@ -81,7 +81,7 @@ const showNews = (allNews, categoryName) => {
               <div class="flex items-center">
                 <a onclick="my_modal_4.showModal(); loadSingleNews('${
                   news._id
-                }')" class="w-16" href="#"
+                }')" class="w-16 text-right" href="#"
                   ><i class="fa-solid fa-arrow-right text-2xl text-[#515151]"></i
                 ></a>
               </div>
