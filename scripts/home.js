@@ -14,7 +14,7 @@ const loadSingleCategoryNews = (id, categoryName) => {
     .then((data) => showNews(data.data, categoryName));
 };
 
-// Showing Single News on the UI
+// Showing all news of category on the UI
 const showNews = (news, categoryName) => {
   console.log(news);
   // Number of items in a category
@@ -26,10 +26,7 @@ const showNews = (news, categoryName) => {
 
 // Showing the categories on the UI
 const showCategories = (categories) => {
-  console.log(categories);
   categories.forEach((category) => {
-    console.log(category);
-
     const newsCategoryContainer = document.getElementById("news-category-container");
     const categoryListItemElement = document.createElement("li");
     categoryListItemElement.innerHTML = `
