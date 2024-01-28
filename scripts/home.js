@@ -17,8 +17,11 @@ const loadSingleCategoryNews = (id, categoryName) => {
 // Showing Single News on the UI
 const showNews = (news, categoryName) => {
   console.log(news);
-  const numberOfNews = document.getElementById("number-of-news");
-  numberOfNews.innerText = `${news.length} items found for category ${categoryName}`;
+  // Number of items in a category
+  const numberOfNewsText = document.getElementById("number-of-news");
+  const numberOfNewsDiv = document.getElementById("number-of-news-div");
+  numberOfNewsDiv.classList.remove("hidden");
+  numberOfNewsText.innerText = `${news.length} items found for category ${categoryName}`;
 };
 
 // Showing the categories on the UI
