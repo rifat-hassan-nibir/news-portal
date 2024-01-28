@@ -45,9 +45,9 @@
     </style>
   </head>
   <body class="bg-[#F6F6F6]">
-    <header class="container mx-auto">
+    <header class="container mx-auto px-5 lg:px-0">
       <!-- Navbar -->
-      <nav class="py-4 border-b-2 border-[#CDCDCD]">
+      <nav class="lg:py-4 border-b-2 border-[#CDCDCD]">
         <div class="navbar flex justify-between p-0">
           <div class="navbar-start">
             <div class="dropdown">
@@ -93,70 +93,16 @@
 
       <!-- News Category -->
       <ul
-        class="flex flex-wrap gap-4 justify-between py-8 text-lg text-[#858585]"
+        class="flex flex-wrap gap-4 justify-between py-4 lg:py-8 text-lg text-[#858585]"
         id="news-category-container"
       ></ul>
       <div id="number-of-news-div" class="bg-white p-5 rounded-[8px] hidden">
         <h3 class="text-black text-lg" id="number-of-news"></h3>
       </div>
     </header>
-    <main class="container mx-auto">
+    <main class="container mx-auto px-5 lg:px-0">
       <!-- Single News on the UI -->
-      <div id="news-div" class="my-10">
-        <div class="bg-white p-5 rounded-xl flex gap-10">
-          <div class="w-[250px]">
-            <img class="w-full" src="img/news-international-logo.png" alt="" />
-          </div>
-          <div class="w-auto space-y-4">
-            <h3 class="text-[28px] text-[#121221] font-bold">
-              The best fashion influencers to follow for sartorial inspiration
-            </h3>
-            <p class="text-base text-[#949494]">
-              From our favourite UK influencers to the best missives from Milan and the coolest New
-              Yorkers, read on some of the best fashion blogs out there, and for even more
-              inspiration, do head to our separate black fashion influencer round-up. <br><br>
-              
-              Fancy some shopping deals? Check out these amazing sales: Zara Black Friday, ASOS Black Friday,
-              Missoma Black Friday and Gucci Black Friday...
-            </p>
-            <div class="flex justify-between">
-              <div class="flex items-center gap-3">
-                <img class="size-10 rounded-full" src="img/user-image.png" alt="" />
-                <div>
-                  <h4 class="text-base text-[#2B2C34]">Jane Cooper</h4>
-                  <p class="text-sm text-[#718797]">Jan 10, 2022</p>
-                </div>
-              </div>
-              <div class="flex items-center gap-2">
-                <i class="fa-regular fa-eye text-xl text-[#515151]"></i>
-                <p class="text-lg font-bold text-[#515151]">1.M</p>
-              </div>
-              <div class="flex items-center w-[150px]">
-                <a class="w-16" href="#"
-                  ><i class="fa-regular fa-star"></i></i
-                ></a>
-                <a class="w-16" href="#"
-                  ><i class="fa-regular fa-star"></i></i
-                ></a>
-                <a class="w-16" href="#"
-                  ><i class="fa-regular fa-star"></i></i
-                ></a>
-                <a class="w-16" href="#"
-                  ><i class="fa-regular fa-star"></i></i
-                ></a>
-                <a class="w-16" href="#"
-                  ><i class="fa-regular fa-star"></i></i
-                ></a>
-              </div>
-              <div class="flex items-center">
-                <a class="w-16" href="#"
-                  ><i class="fa-solid fa-arrow-right text-2xl text-[#515151]"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div id="all-news-div" class="my-6"></div>
     </main>
     <footer></footer>
     <!-- Script -->
