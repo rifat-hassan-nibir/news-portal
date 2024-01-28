@@ -13,6 +13,19 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Tailwind Custom Styles -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "theme-color": "##5D5FEF",
+            },
+          },
+        },
+      };
+    </script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,12 +35,75 @@
     />
 
     <!-- Font Awesome CDN -->
-    <script
-      src="https://kit.fontawesome.com/cff9795881.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/cff9795881.js" crossorigin="anonymous"></script>
+
+    <!-- Custom CSS Styles -->
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
   </head>
-  <body>
+  <body class="bg-[#F6F6F6]">
+    <header class="container mx-auto">
+      <!-- Navbar -->
+      <nav class="py-4 border-b-2 border-[#CDCDCD]">
+        <div class="navbar flex justify-between p-0">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li><a href="index.html">News</a></li>
+                <li><a href="blog.html">Blog</a></li>
+              </ul>
+            </div>
+            <a class="btn btn-ghost p-0 text-xl">News Portal</a>
+          </div>
+          <div class="hidden lg:flex gap-5">
+            <ul class="menu menu-horizontal px-1">
+              <li><a href="index.html">News</a></li>
+              <li><a href="blog.html">Blog</a></li>
+            </ul>
+            <div class="avatar">
+              <div class="w-8 rounded-full">
+                <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- News Category -->
+      <ul
+        class="flex flex-wrap gap-4 justify-between py-8 text-lg text-[#858585]"
+        id="news-category-container"
+      ></ul>
+      <div class="bg-white p-5 rounded">
+        <h3 class="text-black text-lg" id="number-of-news"></h3>
+      </div>
+    </header>
+    <main class="container mx-auto">
+      <!-- Single News on the UI -->
+    </main>
+    <footer></footer>
     <!-- Script -->
     <script src="scripts/home.js"></script>
   </body>
