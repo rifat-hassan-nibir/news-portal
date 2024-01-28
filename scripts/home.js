@@ -40,20 +40,26 @@ const showNews = (allNews, categoryName) => {
                 ${news.title}
               </h3>
               <p class="text-base text-[#949494]">
-                ${news.details}
+                ${news.details.slice(0, 400)}...
               </p>
             </div>
             <div class="flex justify-between ">
               <div class="flex items-center gap-3">
-                <img class="size-10 rounded-full" src="img/user-image.png" alt="" />
+                <img class="size-10 rounded-full" src="${news.author.img}" alt="" />
                 <div>
-                  <h4 class="text-base text-[#2B2C34]">Jane Cooper</h4>
-                  <p class="text-sm text-[#718797]">Jan 10, 2022</p>
+                  <h4 class="text-base text-[#2B2C34]">${
+                    news.author.name ? news.author.name : "No data found"
+                  }</h4>
+                  <p class="text-sm text-[#718797]">${
+                    news.author.published_date ? news.author.published_date : "No data found"
+                  }</p>
                 </div>
               </div>
               <div class="flex items-center gap-2">
                 <i class="fa-regular fa-eye text-xl text-[#515151]"></i>
-                <p class="text-lg font-bold text-[#515151]">1.M</p>
+                <p class="text-lg font-bold text-[#515151]">${
+                  news.total_view ? news.total_view : "No data found"
+                }</p>
               </div>
               <div class="flex items-center hidden lg:block w-[150px]">
                 <a class="w-16" href="#"
@@ -73,7 +79,9 @@ const showNews = (allNews, categoryName) => {
                 ></a>
               </div>
               <div class="flex items-center">
-                <a class="w-16" href="#"
+                <a onclick="my_modal_4.showModal(); loadSingleNews('${
+                  news._id
+                }')" class="w-16" href="#"
                   ><i class="fa-solid fa-arrow-right text-2xl text-[#515151]"></i
                 ></a>
               </div>
@@ -83,6 +91,32 @@ const showNews = (allNews, categoryName) => {
     `;
     allNewsDiv.appendChild(singleNewsDiv);
   });
+};
+
+// Load single news
+const loadSingleNews = (id) => {
+  fetch(`https://openapi.programming-hero.com/api/news/${id}`)
+    .then((response) => response.json())
+    .then((data) => showSingleNewsOnUI(data.data[0]));
+};
+
+// Show single news on UI
+const showSingleNewsOnUI = (singleNewsData) => {
+  console.log(singleNewsData);
+  const modalDiv = document.getElementById("my_modal_4");
+  modalDiv.innerHTML = `
+  <div class="modal-box w-11/12 max-w-5xl space-y-5">
+            <img class="mx-auto" src="${singleNewsData.thumbnail_url}">
+            <h3 class="font-bold text-2xl">${singleNewsData.title}</h3>
+            <p class="py-4">${singleNewsData.details}</p>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button, it will close the modal -->
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+  `;
 };
 
 // Showing the categories on the UI

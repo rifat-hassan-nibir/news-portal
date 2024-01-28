@@ -51,7 +51,7 @@
         <div class="navbar flex justify-between p-0">
           <div class="navbar-start">
             <div class="dropdown">
-              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden p-0 pr-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-5 w-5"
@@ -101,10 +101,17 @@
       </div>
     </header>
     <main class="container mx-auto px-5 lg:px-0">
-      <!-- Single News on the UI -->
+      <!-- Category News on the UI -->
       <div id="all-news-div" class="my-6"></div>
+
+      <!-- Single News on the UI -->
+      <div>
+        <!-- You can open the modal using ID.showModal() method -->
+        <dialog id="my_modal_4" class="modal"></dialog>
+      </div>
     </main>
     <footer></footer>
+
     <!-- Script -->
     <script src="scripts/home.js"></script>
   </body>
