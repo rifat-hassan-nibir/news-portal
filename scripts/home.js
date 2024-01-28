@@ -9,6 +9,7 @@ loadCategories();
 
 // Loading Single Categories
 const loadSingleCategoryNews = (id, categoryName) => {
+  loaderFunction(true);
   fetch(`https://openapi.programming-hero.com/api/news/category/${id}`)
     .then((response) => response.json())
     .then((data) => showNews(data.data, categoryName));
@@ -91,6 +92,7 @@ const showNews = (allNews, categoryName) => {
     `;
     allNewsDiv.appendChild(singleNewsDiv);
   });
+  loaderFunction();
 };
 
 // Load single news
@@ -129,4 +131,14 @@ const showCategories = (categories) => {
     `;
     newsCategoryContainer.appendChild(categoryListItemElement);
   });
+};
+
+// Loader
+const loaderFunction = (isLoading) => {
+  const loaderElement = document.getElementById("loader");
+  if (isLoading) {
+    loaderElement.classList.remove("hidden");
+  } else {
+    loaderElement.classList.add("hidden");
+  }
 };
